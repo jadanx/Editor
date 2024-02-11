@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+          
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+        <title>Edit</title>
+    </head>
+    <body>
+        
+        <header class="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    Edit
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="home__footer" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+                </div>
+
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </nav>
+        </header>
+
+        
+        
+      <main class="main">
+            
+            <section class="home">
+
+                <div class="home__container container">
+                    <div class="home__data">
+                      <div class="glass-container">
+               <div class="glass-content">
+               
+                    <span style="color:#9061ff;">Ai <span style="color:#c5b0ff;">Service</span></span>
+                        <h1 class="home__title">Hey Buddy</h1>
+  
+                  <p class="home__description">
+                          
+                          <span style="color:#b5b5b5;">Enhance photos or convert images whether<br> gray or raw image use our Ai to edit your<br> image easily.</span>  no more hiring for <br>editing work
+                        </p>
+                    
+                        <a href="#" class="home__button">
+                            Let's Try
+                        </a>
+                    </div>
+
+                    <div class="home__img">
+                        <img src="static/img/home.png" alt="">
+                      <div class="home__shadow"></div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </section>
+        </main>
+           <div class="convert">       
+      
+          <form action="/" method="post" enctype="multipart/form-data">
+              <input type="file" id="uploadBtn" name="file" accept=".png, .jpg, .jpeg, .gif" required>
+            <label for="uploadBtn">Upload File
+            </label><br>
+            <br>
+            <div class="home__container container">
+            <div class="glass-container">
+                <div class="glass-content">
+               <div class="home__data">
+        <h1>Describe to edit</h1> 
+          <br>
+          <p class="home__description">
+               Wanna to edit photo but not manually then it's<br> a right platform to edit any photo by describing
+          </p>
+          <br>
+            <div class="char-count-container">
+                  <textarea  id="action" rows="4" maxlength="100" oninput="updateCharCount(this)" name="action" required></textarea>
+                  <div id="char-count">0/100 characters</div><button class="Btn" type="submit">Convert</button>
+              </div>
+                 <br>
+            <script>
+              function updateCharCount(input) {
+                  const charCount = input.value.length;
+                  const maxCount = parseInt(input.getAttribute('maxlength'));
+
+                  document.getElementById('char-count').textContent = `${charCount}/${maxCount} characters`;
+              }
+            </script>
+
+            
+             
+          
+             
+             
+          <img id="uploaded-photo"></img>
+          <div class="image-comparison">
+            <div class="images-container">
+             {% if original_image %}
+              <img class="before-image" src="{{ url_for('uploaded_file', filename=original_image) }}">
+             {% endif %}
+            {% if converted_image %}
+              <img class="after-image" src="{{ url_for('uploaded_file', filename=converted_image) }}">
+              {% endif %}
+
+              <div class="slider-line"></div>
+              <div class="slider-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                  />
+                </svg>
+              </div>
+
+              <input type="range" class="slider" min="0" max="100" />
+           
+              
+            </div>
+          </div>
+                </div>
+            </div>
+            </div>
+           </div>
+            </div>
+    
+           
+            <main class="main">
+              <section class="home">
+                <footer class="home__footer">
+                    <span>Country</span>
+                    <span>|</span>
+                    <span>Email@gmail.com</span>
+                </footer>
+            </section>
+        </main>
+
+       
+      
+      <script src="{{ url_for('static',filename='script.js') }}"></script>
+           
+            <script src="{{ url_for('static',filename='main.js') }}"></script>
+            
+
+    </body>      
+
+   </html>
+      
