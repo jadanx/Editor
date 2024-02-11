@@ -13,9 +13,7 @@ I have used python for back-end work and for front-end work html , css , js and 
 
 Python Module : 
 
-• flask
-• cv2
-• uuid
+flask , cv2 , uuid
 
 ## Features
 
@@ -25,7 +23,4 @@ But on Next update you could upload image and edit with much more features.
 
 ## Installation
 
-run code on replit :
-• pip install flask
-• pip install opencv-python
-• pip install opencv-python-headless
+pip install flask , opencv-python , opencv-python-headless
