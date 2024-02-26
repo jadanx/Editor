@@ -24,3 +24,7 @@ But on Next update you could upload image and edit with much more features.
 ## Installation
 
 pip install flask , opencv-python , opencv-python-headless
+
+## Run
+
+https://f579e5d2-39d0-492f-9ef4-8ea24788ebe9-00-2frnc14dmb1p4.sisko.repl.co/
